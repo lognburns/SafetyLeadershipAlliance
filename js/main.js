@@ -7,6 +7,17 @@
   });
 })();
 
+// ── OVERLAY NAV: solid background on scroll ──
+(function () {
+  const nav = document.querySelector('.nav--overlay');
+  if (!nav) return;
+  const onScroll = () => {
+    nav.classList.toggle('nav--scrolled', window.scrollY > 60);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+
 // ── DONATE AMOUNT SELECTOR ──
 document.querySelectorAll('.donate-opt').forEach(opt => {
   opt.addEventListener('click', () => {
