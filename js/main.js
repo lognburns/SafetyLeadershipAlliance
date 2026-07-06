@@ -17,13 +17,3 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 })();
-
-// ── DONATE AMOUNT SELECTOR ──
-document.querySelectorAll('.donate-opt').forEach(opt => {
-  opt.addEventListener('click', () => {
-    document.querySelectorAll('.donate-opt').forEach(o => o.classList.remove('selected'));
-    opt.classList.add('selected');
-    const custom = document.getElementById('custom-amount');
-    if (custom) custom.value = opt.dataset.amount || '';
-  });
-});
